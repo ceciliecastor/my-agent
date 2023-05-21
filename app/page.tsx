@@ -1,5 +1,6 @@
 import GetAllHomes from "@/lib/GetAllHomes";
 import Link from "next/link";
+import SearchInput from "./component/searchInput";
 
 export default async function homePage() {
   const homesData: Promise<Homes[]> = GetAllHomes();
@@ -34,15 +35,17 @@ export default async function homePage() {
           </div>
         </section>
       </article>
-      <article>
-        <h3>Udvalgte boliger</h3>
-        <p>
-          There are many variations of passages of Lorem Ipsum available but the
-          this in majority have suffered alteration in some
-        </p>
+      <article className="pt-[118px]">
+        <section className="text-center max-w-[700px] mx-auto mb-[62px]">
+          <h3>Udvalgte boliger</h3>
+          <p>
+            There are many variations of passages of Lorem Ipsum available but
+            the this in majority have suffered alteration in some
+          </p>
+        </section>
         <section className="grid grid-cols-2 gap-[25px] max-w-[1108px]">
           {homes.slice(0, 4).map((home) => (
-            <Link href={`/${home.id}`}>
+            <Link key={home.id} href={`/${home.id}`}>
               <div
                 className=" bg-white rounded-lg shadow dark:bg-white dark:border-gray-700"
                 key={home.id}
@@ -52,7 +55,7 @@ export default async function homePage() {
                   src={home.images[0].formats.thumbnail.url}
                   alt={home.adress1}
                 />
-                <section className="p-25">
+                <section className="p-[25]">
                   <h4>{home.adress1}</h4>
                   <div>
                     <p>{home.postalcode}</p>

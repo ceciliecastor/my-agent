@@ -1,31 +1,39 @@
 import GetAllHomes from "@/lib/GetAllHomes";
 import Link from "next/link";
+import { AiOutlineHeart } from "react-icons/ai";
 
 export default async function homePage() {
   const homesData: Promise<Homes[]> = GetAllHomes();
   const homes = await homesData;
 
   const content = (
-    <article>
+    <article className="grid content-center justify-center">
       <section>
         <h1>Boliger til salg</h1>
       </section>
-      <section>
-        <h3>Søg efter dit drømmehus</h3>
-        {/* søge funktion */}
-      </section>
-      <section className="grid grid-cols-2 gap-[25px] max-w-[1108px]">
-        {homes.slice(0, 4).map((home) => (
-          <Link key={home.id} href={`/${home.id}`}>
+      <article className="pt-[118px]">
+        <section className="text-center max-w-[700px] mx-auto mb-[62px]">
+          <h4>Søg efter dit drømmehus</h4>
+          <input type="text" />
+          {/* price slider */}
+        </section>
+        <section className="grid grid-cols-2 gap-[25px] max-w-[1108px]">
+          {homes.map((home) => (
             <div
-              className=" bg-white rounded-lg shadow dark:bg-white dark:border-gray-700"
+              className=" bg-white rounded-lg shadow dark:bg-white dark:border-gray-700 grid"
               key={home.id}
             >
-              <img
-                className="w-full rounded-t-lg"
-                src={home.images[0].formats.thumbnail.url}
-                alt={home.adress1}
-              />
+              <div className="justify-end">
+                <AiOutlineHeart />
+              </div>
+              <Link key={home.id} href={`/properties/${home.id}`}>
+                <img
+                  className="w-full rounded-t-lg"
+                  src={home.images[0].formats.thumbnail.url}
+                  alt={home.adress1}
+                />
+              </Link>
+
               <section className="p-[25]">
                 <h4>{home.adress1}</h4>
                 <div>
@@ -44,9 +52,9 @@ export default async function homePage() {
                 </div>
               </section>
             </div>
-          </Link>
-        ))}
-      </section>
+          ))}
+        </section>
+      </article>
     </article>
   );
   return content;
