@@ -1,6 +1,6 @@
 import GetAllHomes from "@/lib/GetAllHomes";
 import Link from "next/link";
-import SearchInput from "./component/searchInput";
+import Image from "next/image";
 
 export default async function homePage() {
   const homesData: Promise<Homes[]> = GetAllHomes();
@@ -9,7 +9,6 @@ export default async function homePage() {
   const content = (
     <article className="grid content-center justify-center">
       <article className="grid place-content-center">
-        <img src="" alt="" />
         <h2 className="text-black">Søg efter din drømme bolig</h2>
         <section>
           <h4>Søg blandt 158 boliger til salg i 74 butikker</h4>
@@ -19,7 +18,6 @@ export default async function homePage() {
       </article>
       <article className="max-w-[1108px]">
         <section>
-          <img src="" alt="" />
           <div>
             <h3>Vi har fulgt danskerne hjem i snart 4 årtier</h3>
             <h4>De synes vi siger noget om os!</h4>
@@ -45,13 +43,14 @@ export default async function homePage() {
         </section>
         <section className="grid grid-cols-2 gap-[25px] max-w-[1108px]">
           {homes.slice(0, 4).map((home) => (
-            <Link key={home.id} href={`/${home.id}`}>
+            <Link key={home.id} href={`/properties/${home.id}`}>
               <div
                 className=" bg-white rounded-lg shadow dark:bg-white dark:border-gray-700"
                 key={home.id}
               >
-                <img
-                  className="w-full rounded-t-lg"
+                <Image
+                  width={540}
+                  height={225}
                   src={home.images[0].formats.thumbnail.url}
                   alt={home.adress1}
                 />
