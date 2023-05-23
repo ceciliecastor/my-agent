@@ -1,23 +1,23 @@
 import GetAllHomes from "@/lib/GetAllHomes";
 import Link from "next/link";
 import { AiOutlineHeart } from "react-icons/ai";
+import Image from "next/image";
+import Heading from "../component/Heading";
 
 export default async function homePage() {
   const homesData: Promise<Homes[]> = GetAllHomes();
   const homes = await homesData;
 
   const content = (
-    <article className="grid content-center justify-center">
-      <section>
-        <h1>Boliger til salg</h1>
-      </section>
+    <article className="grid content-center justify-center w-full">
+      <Heading text="Boliger til salg" />
       <article className="pt-[118px]">
         <section className="text-center max-w-[700px] mx-auto mb-[62px]">
           <h4>Søg efter dit drømmehus</h4>
           <input type="text" />
           {/* price slider */}
         </section>
-        <section className="grid grid-cols-2 gap-[25px] max-w-[1108px]">
+        <section className="grid grid-cols-2 gap-[25px] max-w-[1110px] mx-auto">
           {homes.map((home) => (
             <div
               className=" bg-white rounded-lg shadow dark:bg-white dark:border-gray-700 grid"

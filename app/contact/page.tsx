@@ -1,22 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import ContactForm from "../component/contactForm";
 import { IoIosPaperPlane } from "react-icons/io";
 
 export default function page() {
   return (
     <article>
-      <section>
-        <Image
-          src="/img/banner.jpg"
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-          alt="Din mægler logo"
-        />
-      </section>
       <section className="mt-[120px] mb-[65px] max-w-[1110px] mx-auto">
         <h2>Vi sidder klar til at besvare dine spørgsmål</h2>
         <p>
@@ -25,7 +14,7 @@ export default function page() {
           til at svare på dine spørgsmål.
         </p>
       </section>
-      <section className="max-w-[1110px] mx-auto grid grid-cols-3 gap-[24px]">
+      <section className="max-w-[1110px] mx-auto grid grid-cols-1 lg:grid-cols-3 lg:gap-[24px]">
         <section className="col-span-2">
           <ContactForm />
         </section>

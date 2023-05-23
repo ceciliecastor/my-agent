@@ -1,11 +1,13 @@
+import Container from "../Container";
+import Logo from "./Logo";
 import { BsTelephoneFill, BsFillPersonFill } from "react-icons/bs";
 import { IoIosPaperPlane } from "react-icons/io";
-import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+const Navbar = () => {
   return (
-    <header className="fixed w-full">
+    <section>
+      {/* <section className="fixed w-full z-10"> */}
       <section className="bg-[#162A41] w-full text-white py-[18px]">
         <section className="max-w-[1110px] flex justify-between mx-auto">
           <div className="flex gap-8">
@@ -28,20 +30,17 @@ export default function Header() {
       </section>
       <section className=" bg-white">
         <section className="flex justify-between max-w-[1110px] py-[18px] mx-auto">
-          <Image
-            src="/img/din-maegler-logo.jpg"
-            width={296}
-            height={49}
-            alt="Din mægler logo"
-          />
+          <Logo />
           <div className="text-black flex gap-8 h-full self-center">
-            <Link href="/bolig">Boliger til salg</Link>
-            <Link href="/bolig">Mæglere</Link>
-            <Link href="/bolig">Mine favoritter</Link>
-            <Link href="/bolig">Kontakt os</Link>
+            <Link href="/properties">Boliger til salg</Link>
+            <Link href="/agentsList">Mæglere</Link>
+            <Link href="/favoriteList">Mine favoritter</Link>
+            <Link href="/contact">Kontakt os</Link>
           </div>
         </section>
       </section>
-    </header>
+    </section>
   );
-}
+};
+
+export default Navbar;
