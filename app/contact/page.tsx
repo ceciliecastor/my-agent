@@ -2,6 +2,7 @@
 
 import ContactForm from "../component/contactForm";
 import { IoIosPaperPlane } from "react-icons/io";
+import PropertyCard from "../component/propertyCard";
 
 export default function page() {
   return (

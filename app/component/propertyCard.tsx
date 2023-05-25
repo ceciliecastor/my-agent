@@ -23,8 +23,8 @@ export default async function PropertyCard() {
                   alt={home.adress1}
                 />
                 <section className="p-[25]">
-                  <h4>{home.adress1}</h4>
-                  <div>
+                  <h2>{home.adress1}</h2>
+                  <div className="flex">
                     <p>{home.postalcode}</p>
                     <p>{home.city}</p>
                   </div>

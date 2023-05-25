@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 body {
-  background-color: #f8f8fb;
   color: black;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 60px;
+}
+
+h2{
+  font-weight: 500;
+  font-size: 30px;
+}
+
+h3{
+  font-weight: 500;
+  font-size: 24px;
+}
+
+h4{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+h5{
+  font-weight: 500;
+  font-size: 16px;
 }
