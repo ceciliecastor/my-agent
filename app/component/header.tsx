@@ -18,7 +18,7 @@ export default function Header() {
               +45 7070 4000
             </p>
           </div>
-          <Link href="">
+          <Link href="/login">
             <p className="flex">
               <BsFillPersonFill />
               Login

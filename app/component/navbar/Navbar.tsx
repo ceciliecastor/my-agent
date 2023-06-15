@@ -20,7 +20,7 @@ const Navbar = () => {
               +45 7070 4000
             </p>
           </div>
-          <Link href="">
+          <Link href="/login">
             <p className="flex">
               <BsFillPersonFill />
               Login
@@ -30,10 +30,12 @@ const Navbar = () => {
       </section>
       <section className=" bg-white">
         <section className="flex justify-between max-w-[1110px] py-[18px] mx-auto">
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
           <div className="text-black flex gap-8 h-full self-center">
             <Link href="/properties">Boliger til salg</Link>
-            <Link href="/agentsList">Mæglere</Link>
+            <Link href="/medarbejdere">Mæglere</Link>
             <Link href="/favoriteList">Mine favoritter</Link>
             <Link href="/contact">Kontakt os</Link>
           </div>

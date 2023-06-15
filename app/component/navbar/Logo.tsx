@@ -12,7 +12,7 @@ const Logo = () => {
       className="hidden md:block cursor-pointer"
       height={49}
       width={296}
-      src="/img/din-maegler-logo.jpg"
+      src="/img/din-maegler-logo.png"
     />
   );
 };

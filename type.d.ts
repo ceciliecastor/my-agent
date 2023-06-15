@@ -115,3 +115,36 @@ type Homes = {
   users: [];
   id: string;
 };
+
+type Agent = {
+  name: string;
+  title: string;
+  phone: string;
+  email: string;
+  image: {
+    name: string;
+    size: number;
+    url: string;
+    formats: {
+      thumbnail: {
+        name: string;
+        hash: string;
+        ext: string;
+        mime: string;
+        width: number;
+        height: number;
+        size: number;
+        path: null;
+        url: string;
+        provider_metadata: {
+          public_id: string;
+          resource_type: string;
+        };
+      };
+    };
+    width: number;
+    height: number;
+    id: string;
+  };
+  id: string;
+};
